@@ -38,11 +38,11 @@ class GroqEngine:
 Given a dataset schema and a user question, generate ONLY the pandas code needed to answer it.
 
 RULES:
-1. The DataFrame variable is 'df'
-2. Return ONLY Python code — no explanation
-3. Store final answer in 'result'
-4. For charts, use plotly and store figure in 'result'
-5. Keep code efficient and clean
+- Always validate column names from schema
+- Handle missing values safely
+- Use groupby when aggregation needed
+- Return clean and correct pandas code
+- Avoid assumptions if column not present
 """
 
         user_prompt = f"""
