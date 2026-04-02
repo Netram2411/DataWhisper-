@@ -19,12 +19,13 @@ from utils.data_cleaner import analyze_data_quality, clean_data
 from utils.visualizer import create_basic_stats_charts, display_result
 from config.settings import APP_TITLE, APP_DESCRIPTION, MAX_ROWS_FOR_PREVIEW
 
-# Choose AI Engine
-USE_OLLAMA = True
-if USE_OLLAMA:
-    from utils.ollama_engine import OllamaEngine as AIEngine
+# Choose AI Engine (Groq is default)
+USE_GROQ = True
+
+if USE_GROQ:
+    from utils.groq_engine import GroqEngine as AIEngine
 else:
-    from utils.ollama_engine import AIEngine
+    from utils.groq_engine import GroqEngine as AIEngine
 
 
 # -----------------------------------------------------------
